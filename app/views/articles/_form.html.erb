@@ -1,0 +1,10 @@
+<%= render "layouts/errors", :object => @article %>
+
+<%= form_for @article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.hidden_field :points, :value => 0 %>
+  <%= f.submit %>
+<% end %>
