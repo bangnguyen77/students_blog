@@ -5,3 +5,7 @@
   <li><%= link_to article.title, article_path(article) %> | by <%= article.author %> | <%= article.points %> points</li>
   <% end %>
 </ul>
+
+<hr>
+
+<%= link_to "New Article", new_article_path %>
