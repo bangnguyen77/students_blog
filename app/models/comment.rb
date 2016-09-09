@@ -1,4 +1,4 @@
-class Comment < ActiveRecord:Base
+class Comment < ActiveRecord::Base
   belongs_to :article
 
   validates :text, :user, :article_id, :presence => true
