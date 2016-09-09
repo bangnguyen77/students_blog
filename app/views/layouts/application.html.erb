@@ -6,14 +6,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <header>
+      <%= render '/layouts/nav' %>
+    </header>
+
     <%= flash[:alert] %>
     <%= flash[:notice] %>
 
     <div class="container">
       <%= yield %>
     </div>
+
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Your Website 2016</p>
+      </div>
+    </footer>
   </body>
 </html>
