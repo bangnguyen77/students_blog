@@ -3,6 +3,10 @@
 <ul>
   <% @articles.each do |article| %>
   <li><%= link_to article.title, article_path(article) %> | by <%= article.author %> | <%= article.points %> points</li>
+    <%= form_for [article] do |f| %>
+      <%= f.hidden_field(:points, :value => (article.points + 10)) %>
+      <p><%= f.submit "Vote" %></p>
+    <% end %>
   <% end %>
 </ul>
 

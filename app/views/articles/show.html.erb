@@ -7,7 +7,7 @@
   <ul>
     <% @article.comments.each do |comment| %>
       <li>
-        <%= comment.text %> |
+        <%= comment.text %> | by <%= comment.user %> |
         <%= link_to "Edit", edit_article_comment_path(@article, comment) %> |
         <%= link_to "Delete", article_comment_path(@article, comment),
                                 :data => {:confirm => "Are you sure?",
