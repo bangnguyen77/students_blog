@@ -8,8 +8,10 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.new(comment_params)
     if @comment.save
+      flash[:notice] = "Comment successfully added!"
       redirect_to article_path(@comment.article)
     else
+      flash[:alert] = "Comment not saved. Try again!"
       render :new
     end
   end
@@ -23,8 +25,10 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     if @comment.update(comment_params)
+      flash[:notice] = "Update saved successfully!"
       redirect_to article_path(@comment.article)
     else
+      flash[:alert] = "Update not saved. Try again!"
       render :edit
     end
   end
@@ -33,6 +37,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
+    flash[:notice] = "Comment was deleted successfully!"
     redirect_to article_path(@comment.article)
   end
 
