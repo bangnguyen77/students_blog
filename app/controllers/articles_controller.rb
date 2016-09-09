@@ -1,17 +1,14 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order('points DESC')
-    render :index
   end
 
   def show
     @article = Article.find(params[:id])
-    render :show
   end
 
   def new
     @article = Article.new
-    render :new
   end
 
   def create
@@ -25,7 +22,6 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-    render :edit
   end
 
   def update
