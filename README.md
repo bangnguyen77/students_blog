@@ -4,34 +4,42 @@
 ### This app allows users to sign up and post an article or a writing on the homepage and other users can comment on it.
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+### Installation
+In the terminal, run the following commands:
+* Repo clone to your local computer
+```
+git clone https://github.com/bangnguyen77/students_blog
+```
 
 * System dependencies
-
-* Configuration
-
-* Database creation
 ```
-$ rake db:create
-```
-```
-rake db:migrate
-```
-```
-$ rake db:test:prepare
+bundle install
 ```
 
-* Database initialization
-
+* Database creation - Create test and development databases
+```
+$ rails db:create
+```
+```
+$ rails db:migrate
+```
+```
+$ rails db:test:prepare
+```
+* In a new terminal, start the postgres server:
+```
+$ postgres
+```
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* How to start the rails server
 
-* ...
+Start
+```
+$ rails server
+```
+View the default page served by navigating to:
+```
+localhost:3000
+```
